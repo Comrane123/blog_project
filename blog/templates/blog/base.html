@@ -18,16 +18,20 @@
     {# Fonts#}
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
 
+    {# Google web fonts (for icons) #}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
 
 <body class='loader'>
 
 
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg techfont custom-navbar">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg techfont">
     <div class="container">
 
 
         <ul class="navbar-nav mr-auto">
-            <li><a class='navbar-brand bigbrand' href="{% url 'post_list' %}">My Tech blog</a></li>
+            <li><a class='navbar-brand bigbrand' href="{% url 'post_list' %}">The best blog</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="https://www.github.com">Github</a></li>
             <li><a href="https://www.linkedin.com">LinkedIn</a></li>
@@ -44,14 +48,14 @@
                     <a href="{% url 'post_draft_list' %}">Drafts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'logout' %}">Log out</a>
+                    <a href="{% url 'logout' %}?next=/">Log out</a>
                 </li>
 
                 <li class="nav-item">
                     <a>Welcome: {{ user.username }}</a>
                 </li>
             {% else %}
-                <li><a class='navbar-nav ml-auto' href="{% url 'login' %}"><span class="glyphicon glyphicon-user">1</span></a>
+                <li><a class='navbar-nav ml-auto' href="{% url 'login' %}"><span class="material-icons">perm_identity</span></a>
                 </li>
             {% endif %}
 
